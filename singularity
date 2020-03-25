@@ -1,0 +1,21 @@
+Bootstrap: localimage
+From: ./Multi_Atlas_v2.1.0.simg
+
+%files
+./mavol /extra
+./pipeline.sh /extra/pipeline.sh
+
+%post
+mkdir -p /tmp/matlab_mcr && \
+cd /tmp/matlab_mcr/ && \
+wget --progress=bar:force --no-check-certificate https://ssd.mathworks.com/supportfiles/downloads/R2019b/Release/4/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2019b_Update_4_glnxa64.zip && \
+unzip -q -o MATLAB_Runtime_R2019b_Update_4_glnxa64.zip && \
+./install -agreeToLicense yes -mode silent && \
+yum -y remove \
+wget \
+unzip && \
+cd .. && \
+rm -rf /tmp/matlab_mcr
+
+%runscript
+exec /extra/pipeline.sh
