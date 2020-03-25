@@ -1,4 +1,4 @@
-# Multi-Atlas-v3 Spider
+# Multi-Atlas-v3.0.0 Spider
 
 This Multi Atlas Spider version 3.0.0 is the updated version of Multi_Atlas 2.1.0 with the correct computation of the regional volumes
 
